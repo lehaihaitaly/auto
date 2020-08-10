@@ -1,5 +1,5 @@
 # auto
-Install genymotion lastest version
+Install genymotion lastest version 
 Install Google Nexus 9 emulator
 Install Java JDK and set JAVA_HOME path in System variable
 Install maven > 3.1 and set MAVEN_HOME path is System variable
