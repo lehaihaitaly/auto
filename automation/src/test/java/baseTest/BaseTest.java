@@ -11,10 +11,7 @@ public class BaseTest {
         if (driver == null) {
                 CommonUtils.setAndroidCapabilities();
                 driver = CommonUtils.getAndroidDriver();
-                System.out.println(driver.getSessionId());
-
         }
-
     }
     @AfterMethod
     public void quit(){

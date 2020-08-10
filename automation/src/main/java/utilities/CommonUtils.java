@@ -23,7 +23,6 @@ public class CommonUtils {
         capabilities.setCapability("appWaitActivity","com.todoist.activity.WelcomeActivity");
     }
     public static AppiumDriver<MobileElement> getAndroidDriver() {
-
         try {
             serverUrl=new URL("http://127.0.0.1:4723/wd/hub");
         } catch (MalformedURLException e) {
@@ -32,8 +31,5 @@ public class CommonUtils {
         }
         driver = new AndroidDriver<MobileElement>(serverUrl,capabilities);
         return driver;
-
     }
-
-
 }
