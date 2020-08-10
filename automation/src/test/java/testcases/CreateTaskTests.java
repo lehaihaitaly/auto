@@ -21,10 +21,14 @@ public class CreateTaskTests extends BaseTest {
     FacebookScreen facebook;
     HomeScreen home;
     String task;
+    String mail;
+    String pwd;
 
     @BeforeClass
     public void init() throws MalformedURLException {
-        task = RandomStringUtils.randomAlphabetic(8);
+        task = "Project name: "+ RandomStringUtils.randomAlphabetic(8);
+        mail = "ha.le@ascendcorp.com";
+        pwd = "hatinh86";
         setUp();
         login = new LoginScreen(driver);
         facebook = new FacebookScreen(driver);
@@ -34,7 +38,7 @@ public class CreateTaskTests extends BaseTest {
     public void test() throws Exception{
         login.clickFacebookButton();
         switchView();
-        facebook.login("hahaile@gmail.com","hahaile@gmail.com");
+        facebook.login(mail,pwd);
         Thread.sleep(5000);
         facebook.continueLogin();
         switchView();

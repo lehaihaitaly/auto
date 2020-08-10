@@ -19,18 +19,19 @@ public class FacebookScreen extends ScreenBase {
 
     }
 
-
-
-    public void login(String email, String password) throws Exception {
-        driver.findElementById("m_login_email").sendKeys(email);
+    public void login(String mail, String pwd) throws Exception {
+        email = driver.findElementById("m_login_email");
+        email.sendKeys(mail);
+        password = driver.findElementById("m_login_password");
+        password.sendKeys(pwd);
+        loginBtn = driver.findElementByName("login");
+        loginBtn.click();
         Thread.sleep(5000);
-        driver.findElementById("m_login_password").sendKeys(password);
-        Thread.sleep(5000);
-        driver.findElementByName("login").click();
     }
 
     public void continueLogin(){
-        driver.findElementByName("__CONFIRM__").click();
+        continueBtn = driver.findElementByName("__CONFIRM__");
+        continueBtn.click();
     }
 
 
