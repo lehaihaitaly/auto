@@ -12,7 +12,6 @@ public class HomeScreen extends ScreenBase {
     public HomeScreen(AppiumDriver<MobileElement> driver) {
         super(driver);
         PageFactory.initElements(new AppiumFieldDecorator(driver), this);
-        System.out.println(driver.getSessionId());
     }
     @AndroidFindBy(id="com.todoist:id/fab")
     public WebElement addTaskIcon;
@@ -31,10 +30,5 @@ public class HomeScreen extends ScreenBase {
         insertBtn.click();
         summaryTxt.click();
         Thread.sleep(4000);
-
-
     }
-
-
-
 }

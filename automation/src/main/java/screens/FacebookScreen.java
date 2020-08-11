@@ -6,16 +6,18 @@ import io.appium.java_client.MobileElement;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
+import org.testng.Assert;
 
 public class FacebookScreen extends ScreenBase {
     private WebElement email;
     private WebElement password;
     private WebElement continueBtn;
     private WebElement loginBtn;
+    private String facebookTxt = "Hãy đăng nhập vào tài khoản Facebook của bạn để kết nối với Todoist";
+    private String faceContinueTXT = "Bạn có muốn tiếp tục không?";
     public FacebookScreen(AppiumDriver<MobileElement> driver){
         super(driver);
         PageFactory.initElements(new AppiumFieldDecorator(driver), this);
-        System.out.println(driver.getSessionId());
 
     }
 
@@ -27,6 +29,13 @@ public class FacebookScreen extends ScreenBase {
         loginBtn = driver.findElementByName("login");
         loginBtn.click();
         Thread.sleep(5000);
+    }
+    public void verifyThatFacebookScreenIsDisplayed(){
+        Assert.assertTrue(driver.getPageSource().contains(facebookTxt));
+    }
+
+    public void verifyFaceBookContinueScreenIsDisplayed(){
+        Assert.assertTrue(driver.getPageSource().contains(faceContinueTXT));
     }
 
     public void continueLogin(){

@@ -12,8 +12,6 @@ public class LoginScreen extends ScreenBase {
     public LoginScreen(AppiumDriver<MobileElement> driver) {
         super(driver);
         PageFactory.initElements(new AppiumFieldDecorator(driver), this);
-        System.out.println(driver.getSessionId());
-
     }
     @AndroidFindBy(id="com.todoist:id/btn_facebook")
     public WebElement facebookButton;

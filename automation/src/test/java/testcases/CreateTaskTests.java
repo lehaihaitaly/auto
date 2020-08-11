@@ -32,8 +32,10 @@ public class CreateTaskTests extends BaseTest {
     public void test() throws Exception{
         login.clickFacebookButton();
         switchView();
+        facebook.verifyThatFacebookScreenIsDisplayed();
         facebook.login(mail,pwd);
         Thread.sleep(5000);
+        facebook.verifyFaceBookContinueScreenIsDisplayed();
         facebook.continueLogin();
         switchView();
         home.addTask(task);
