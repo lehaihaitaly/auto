@@ -5,8 +5,11 @@ import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
+
+import java.util.List;
 
 public class HomeScreen extends ScreenBase {
     public HomeScreen(AppiumDriver<MobileElement> driver) {
@@ -24,11 +27,8 @@ public class HomeScreen extends ScreenBase {
 
     public void addTask(String content) throws Exception{
         addTaskIcon.click();
-        Thread.sleep(4000);
         taskContent.sendKeys(content);
-        Thread.sleep(4000);
         insertBtn.click();
         summaryTxt.click();
-        Thread.sleep(4000);
     }
 }

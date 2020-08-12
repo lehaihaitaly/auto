@@ -8,7 +8,8 @@ import screens.FacebookScreen;
 import screens.HomeScreen;
 import screens.LoginScreen;
 import baseTest.*;
-import static baseScreen.ScreenBase.switchView;
+import static constant.BaseConstant.NATIVE_VIEW;
+import static constant.BaseConstant.WEB_VIEW;
 
 public class CreateTaskTests extends BaseTest {
     LoginScreen login;
@@ -17,6 +18,7 @@ public class CreateTaskTests extends BaseTest {
     String task;
     String mail;
     String pwd;
+
 
     @BeforeClass
     public void init()  {
@@ -31,15 +33,13 @@ public class CreateTaskTests extends BaseTest {
     @Test
     public void test() throws Exception{
         login.clickFacebookButton();
-        switchView();
+        switchTo(WEB_VIEW);
         facebook.verifyThatFacebookScreenIsDisplayed();
         facebook.login(mail,pwd);
-        Thread.sleep(5000);
         facebook.verifyFaceBookContinueScreenIsDisplayed();
         facebook.continueLogin();
-        switchView();
+        switchTo(NATIVE_VIEW);
         home.addTask(task);
         Assert.assertTrue(driver.getPageSource().contains(task));
-
     }
 }

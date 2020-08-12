@@ -18,6 +18,5 @@ public class LoginScreen extends ScreenBase {
     public void clickFacebookButton() throws Exception{
         facebookButton.click();
     }
-
 }
 

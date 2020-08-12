@@ -8,6 +8,7 @@ import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.nativekey.AndroidKey;
 import io.appium.java_client.android.nativekey.KeyEvent;
 import java.util.Set;
+import java.util.concurrent.TimeUnit;
 
 public class ScreenBase {
 	public static AppiumDriver<MobileElement> driver;
@@ -16,19 +17,11 @@ public class ScreenBase {
 	public ScreenBase(AppiumDriver<MobileElement> driver) {
 		this.driver=driver;
 	}
-	public static void switchView() throws Exception{
-		Thread.sleep(10000);
-		Set<String> contextNames = driver.getContextHandles();
-		for (String contextName : contextNames) {
-			if (contextName.contains("WEBVIEW_com.todoist")){
-				driver.context("WEBVIEW_com.todoist");
-			}
-			else{
-				driver.context("NATIVE_APP");
-			}
-		}
+
+	public static void waitFor(int seconds)	{
+		driver.manage().timeouts().implicitlyWait(seconds, TimeUnit.SECONDS);
+
 	}
-	
 	public void hideKeyboard() {
 		driver.hideKeyboard();
 	}
