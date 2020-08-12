@@ -1,5 +1,5 @@
 # auto
-The app is based in Vietnam so the languague connected to Facebook is Vietnamese
+The app is based in Vietnam so the default languague connected to Facebook is Vietnamese 
 
 Install genymotion lastest version. 
 
