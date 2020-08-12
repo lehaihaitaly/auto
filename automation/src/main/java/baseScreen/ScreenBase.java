@@ -22,6 +22,15 @@ public class ScreenBase {
 		driver.manage().timeouts().implicitlyWait(seconds, TimeUnit.SECONDS);
 
 	}
+	public  static void switchTo(String view) throws Exception{
+		Thread.sleep(5000);
+		Set<String> contextNames = driver.getContextHandles();
+		for (String contextName : contextNames) {
+			if (contextName.contains(view)){
+				driver.context(view);
+			}
+		}
+	}
 	public void hideKeyboard() {
 		driver.hideKeyboard();
 	}

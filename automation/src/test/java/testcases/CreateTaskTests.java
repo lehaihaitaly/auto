@@ -1,5 +1,6 @@
 package testcases;
 
+import baseScreen.ScreenBase;
 import org.apache.commons.lang.RandomStringUtils;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
@@ -8,6 +9,8 @@ import screens.FacebookScreen;
 import screens.HomeScreen;
 import screens.LoginScreen;
 import baseTest.*;
+
+import static baseScreen.ScreenBase.switchTo;
 import static constant.BaseConstant.NATIVE_VIEW;
 import static constant.BaseConstant.WEB_VIEW;
 

@@ -18,7 +18,6 @@ public class FacebookScreen extends ScreenBase {
     public FacebookScreen(AppiumDriver<MobileElement> driver){
         super(driver);
         PageFactory.initElements(new AppiumFieldDecorator(driver), this);
-
     }
 
     public void login(String mail, String pwd) throws Exception {
